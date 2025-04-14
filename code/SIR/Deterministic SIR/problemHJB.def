@@ -1,0 +1,82 @@
+# This file defines all dimensions and parameters for your problem: 
+# Dimensions:
+state.dimension 2
+control.dimension 1
+constant.dimension 7
+brownian.dimension 0
+
+# Variable Names :
+state.0 s
+state.1 i
+control.0 u
+
+# Constants :
+constant.0 N 30
+constant.1 c1 0
+constant.2 c2 1
+constant.3 c3 1
+constant.4 c4 0
+constant.5 gamma 0.32
+constant.6 beta 0.0051
+
+# Time discretization :
+time.initial 0
+time.final 250
+time.steps 300
+
+# State discretization: uniform grid
+state.0.lowerbound 0
+state.0.upperbound 30
+state.0.steps 200
+state.1.lowerbound 0
+state.1.upperbound 30
+state.1.steps 200
+
+# value function for points outside the state grid:
+# final cost ; projection; infinity; user_function
+valueFunction.out.of.grid final_cost
+
+# Control discretisation :
+# uniform ; 
+# components_user_file; components_user_function; control_set_user_file;
+# control_set_user_function; control_set_user_function_state_dependent
+control.set uniform
+# uniform case 
+control.0.lowerbound 0
+control.0.upperbound 0.8
+control.0.steps 1
+
+# System modes (>=1) and admissible transitions for switching between modes
+# all_transitions; user_file; user_function
+# state jumps at transitions: none; user_function
+system.modes 1
+admissible.transitions all_transitions
+state.jumps none
+
+# Value function save files:
+# Previous steps type: resume; overwrite; ask
+# Output format type: text; binary; none
+# Output path: . --> here; other repertoire
+valueFunction.previous.steps overwrite
+valueFunction.output.format text
+valueFunction.output.path valueFunction/
+
+# SimulatedTrajectory: 
+# Computation: none; after_valueFunction; read_valueFunction
+# Noise: none; gaussian; user_function
+# Starting mode: best_mode; user_function; value:[0, nbmode-1]
+# Output path: . -->here; other repertoire
+simulatedTrajectory.computation none
+simulatedTrajectory.output.path trajectory/
+simulatedTrajectory.noise none
+simulatedTrajectory.starting.mode -1
+simulatedTrajectory.starting.state.0 3
+simulatedTrajectory.starting.state.1 3
+
+# ProcessLaw: 
+# Computation: true; false
+# Output Path: . -->here; other repertoire
+processLaw.computation false
+processLaw.output.path processLaw/
+processLaw.initial.path processLaw/initialDistribution/
+
