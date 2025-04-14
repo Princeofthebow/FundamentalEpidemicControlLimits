@@ -1,0 +1,1 @@
+The `Matlab` code in `SIR_PolicyComputation.m` finds the exact optimal policies for the considered SIR model for a specific set of parameters. In order to obtain the optimal policies the user can run the script using the desired set of parameters.
