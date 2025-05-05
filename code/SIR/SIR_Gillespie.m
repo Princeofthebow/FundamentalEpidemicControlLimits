@@ -3,7 +3,7 @@ clc
 
 
 N_i = 500;%  Number of individuals in the population
-N = N_i+1;% inidividuals in the grid
+N = N_i+1;% individuals in the grid
 
 gamma = 1; % Recovery rate
 R0 = 2.5; % R0 of the disease
