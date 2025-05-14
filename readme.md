@@ -29,7 +29,7 @@ An overview ot the code base is provided below.
 ## Directory Structure
 
 There are two main folders, `code/` and `plots/`. `code` contains all the scripts used to generate the data files. These include ```C++``` code as well as ```Matlab``` code. `script_plots` contains several data processing files and will contain the code and material that is needed to reconstruct the figures of the paper and the supplementary material.
-Specific requirements for the codebase are provided in each of the folders. But a quick start guid is outlined in the [Getting started section](#Getting-started)
+The requirements for the codebase are provided in each of the folders. But a quick start guid is outlined in the [Getting started section](#Getting-started)
 
 
 ---
@@ -79,7 +79,7 @@ The content of `code/` and as well as a short description of the content is prov
 The folder `script_plots/` contains data processing files  and after the review process is finalised will contain sub-folders that are named after figures in the paper. The sub-folders will include the relevant figure, the data and the code that was used to generate the figure.
 
 ## Getting started
-The specific instructions to run a specific computation are provided in each folder. Here we provide a quick start guide to run some low scale computations. 
+The specific instructions to run a computation are provided in each folder. Here we provide a quick start guide to run some low scale computations. 
 
 The code base is written in ```C++``` and ```Matlab```. Specifically:
 
@@ -93,8 +93,8 @@ The code base is written in ```C++``` and ```Matlab```. Specifically:
     *N.B.* The computation time can be long in certain parameter configurations and for large parameter grids. The default parameters are set to obtain a solution in a relatively short amount of time on a modern computer. However, in order to obtain the optimal policies for large populations and a wide range of parameters, it is advised to:
 
     - Run the code in a High Performance Computing environment (HPC)  
-    - Make use of the `openmp` `g++` compiler directive
+    - Make use of the `openmp` `g++` compiler parameter for parallel computation
 
  
 
-- The ```Matlab``` code does not require any toolbox. Once the considered file has been opened in the `Matlab` environment editor and the parameter have been chosen it is sufficient to press the `"Play"` button or `F5`.
+- The ```Matlab``` only requires the parallel computation toolbox for the time simulations. Once the considered file has been opened in the `Matlab` environment editor and the parameter have been chosen it is sufficient to press the `"Run"` button or `F5`.

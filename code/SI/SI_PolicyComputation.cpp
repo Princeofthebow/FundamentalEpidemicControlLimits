@@ -7,6 +7,17 @@
 using namespace std;
 using std::vector;
 
+/*
+The code in this file computes the optimal policies using value iteration 
+for the Susceptible-Infected model via the value iteration algoritihm for 
+the considered costs for arbitrary grids in the paramters.
+The code can be compiled using g++ as descrived in the readme file. The use
+of the -O3 option in g++ is suggested.
+The use of a HPC environment is also required for large grids and population
+sizes.
+*/
+
+
 vector<double> linspace(double a, double b, int n)
 {
     // This function creates a linearly space vectors
