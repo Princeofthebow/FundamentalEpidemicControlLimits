@@ -1,4 +1,4 @@
-# Documentation on the code related to the paper *Fundamental limits for taming infectious disease*
+# Documentation for the code related to the paper *Fundamental limits for taming infectious disease*
 
 
 ## Table of Contents
@@ -83,14 +83,18 @@ The specific instructions to run a specific computation are provided in each fol
 
 The code base is written in ```C++``` and ```Matlab```. Specifically:
 
-- The ```C++``` code has been written and tested using the `g++` compiler in a linux environment. In order to run a computation the user must specific the specific parameters in the specific `.cpp` file and save the file (as discussed below default parameters ensure reasonable computation times). The considered file has to then be compiled and run using the following commands
-```console
-foo@bar:~$ g++ -o filetorun.o hello.cpp
-foo@bar:~$ ./filetorun.o
-```
-*N.B.* The computation time can be long in certain parameter configuration and for large parameter grids. The default parameters are set so to obtain a solutions in a relatively short amount of time on modern computer. In order however to obtain the the optimal policies for large populations and a large parameter ranges it is advised to:
-    - Run the code in High Performance Computing environment
-    - Makes use of the `openmp` `g++` compiler directive 
+- The ```C++``` code has been written and tested using the `g++` compiler in a Linux environment. In order to run a computation, the user must specify the parameters in the considered `.cpp` file and save the file with a text editor (as discussed below, default parameters ensure reasonable computation times). The considered file then has to be compiled and run using the following commands:
+
+    ```console
+    foo@bar:~$ g++ -o filetorun.o hello.cpp
+    foo@bar:~$ ./filetorun.o
+    ```
+
+    *N.B.* The computation time can be long in certain parameter configurations and for large parameter grids. The default parameters are set to obtain a solution in a relatively short amount of time on a modern computer. However, in order to obtain the optimal policies for large populations and a wide range of parameters, it is advised to:
+
+    - Run the code in a High Performance Computing environment (HPC)  
+    - Make use of the `openmp` `g++` compiler directive
+
  
 
-- The ```Matlab``` code does not require any specific toolbox. Once the specific file has been opened in the `Matlab` environment editor and the parameter have been chosen it is sufficient to press the `"Play"` button or `F5`.
+- The ```Matlab``` code does not require any toolbox. Once the considered file has been opened in the `Matlab` environment editor and the parameter have been chosen it is sufficient to press the `"Play"` button or `F5`.
