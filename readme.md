@@ -15,22 +15,21 @@ This research was conceived and led by Giovanni Pugliese Carratelli and Ioannis 
 
 This repository provides the code, some examples and the plots for the paper *Fundamental limits for taming infectious disease* which investigates how during an epidemic prevalence signals can be ineffective to tame the spread of a disease.
 
-We consider the problem of finding transmission mitigation measures $u^\ast$ that minimise the social/economic costs $g_c(i,u)$ due to $i$ infected and intervention $u$ over an indefinite amount of time.
+
+We consider the problem of finding transmission mitigation measures $u^\ast$ that minimise the social/economic costs $g_c(i,u)$ due to $i$ infected and intervention $u$ over an indefinite amount of time (see Figure). 
 
 ![Fundamental limits on taming epidemics](Diagram.png)
+*Establishing strategy design principles for epidemics is a complex task. In our paper we make use of the above schema in order to address this issue for arbitrary complex epidemics optimising over interventions for a large class of practically relevant costs.*
 
-The paper demonstrates that during an epidemic increasing infections are not associated with increasingly restrictive measures for large class of relevant costs and policies are predominately constant. To this end we leverage stochastic jump models that accurately describe the evolution of the epidemics in that only rates can be controlled rather than individual events. We then make use of the Bellman Equation and we develop computational and analytical tools and we show that for a large class of models and cost functions prevalence signals are not effective.
-
+We model the epidemics as stochastic jump models that accurately describe the evolution of the epidemics in that only rates can be controlled rather than individual events. We consider a wide class of cost functions that depend arbitrarily on interventions and scale with infections and we demonstrate that increasing infections are not associated with increasingly restrictive measures. The optimal policies are also constant with respect to prevalence implying no incentive to adjust the optimally chosen transmission rate to respond to the rapidly changing infection prevalence. After exhaustive computations we find that our results hold for arbitrary complex stochastic compartmental models and for a very broad class of epidemic and cost parameters. We identify these generic features of the optimal policies via provably exact analytical and computational tools.
 
 This repository contains the scripts and data files used to generate the results presented in the paper *Fundamental limits for taming infectious disease* and its supplementary materials. Below is an overview of the directory structure and a list of computer source, and data processing scripts.
 
-## Directory Structure and summary of implementatino details
+## Directory Structure
 
 There are two main folders, `code/` and `plots/`. `code` contains all the scripts used to generate the data files. These include ```C++``` code as well as ```Matlab``` code. `script_plots` contains several data processing files and will contain the code and material that is needed to reconstruct the figures of the paper and the supplementary material.
-Specific requirement for the codebase are provided in the folders outlined below but in summary:
+Specific requirements for the codebase are provided in each of the folders. But a quick start guid is outlined in the [Getting started section](#Getting-started)
 
-- The ```C++``` code make use of the `openmp` `g++` compiler directive and in order to obtain the the optimal policies for large populations and a large parameter ranges it is advised to run it in High Perfomance Computing environment. 
-- The ```Matlab``` code does not require any specific toolbox.
 
 ---
 
@@ -77,3 +76,21 @@ The content of `code/` and as well as a short description of the content is prov
 ---
 
 The folder `script_plots/` contains data processing files  and after the review process is finalised will contain sub-folders that are named after figures in the paper. The sub-folders will include the relevant figure, the data and the code that was used to generate the figure.
+
+## Getting started
+The specific instructions to run a specific computation are provided in each folder. Here we provide a quick start guide to run some low scale computations. 
+
+The code base is written in ```C++``` and ```Matlab```. Specifically:
+
+- The ```C++``` code has been written and tested using the `g++` compiler in a linux environment. In order to run a computation the user must specific the specific parameters in the specific `.cpp` file and save the file (as discussed below default parameters ensure reasonable computation times). The considered file has to then be compiled and run using the following commands
+```console
+foo@bar:~$ g++ -o filetorun.o hello.cpp
+foo@bar:~$ ./filetorun.o
+```
+
+*N.B.* The computation time can be long in certain parameter configuration and for large parameter grids. The default parameters are set so to obtain a solutions in a relatively short amount of time on modern computer. In order however to obtain the the optimal policies for large populations and a large parameter ranges it is advised to:
+  - Run the code in High Performance Computing environment
+  - Makes use of the `openmp` `g++` compiler directive 
+ 
+
+- The ```Matlab``` code does not require any specific toolbox. Once the specific file has been opened in the `Matlab` environment editor and the parameter have been chosen it is sufficient to press the `"Play"` button or `F5`.
