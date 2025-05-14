@@ -4,7 +4,7 @@
 ## Table of Contents
 - [Project description](#introduction)
 - [Directory structure](#directory-structure)
-
+- [Getting started](#Getting-started)
 ## Project description
 
 **Contributors**
@@ -13,17 +13,18 @@ This research was conceived and led by Giovanni Pugliese Carratelli and Ioannis 
 
 **Summary**
 
-This repository provides the code, some examples and the plots for the paper *Fundamental limits for taming infectious disease* which investigates how during an epidemic prevalence signals can be ineffective to tame the spread of a disease.
+This repository provides the code, some examples and data files used to generate the results presented in the paper r *Fundamental limits for taming infectious disease* which investigates how during an epidemic prevalence signals can be ineffective to tame the spread of a disease. Below is an overview of article and the directory structure and a list of computer code sources is provided in the [directory structure section](#directory-structure).
 
 
 We consider the problem of finding transmission mitigation measures $u^\ast$ that minimise the social/economic costs $g_c(i,u)$ due to $i$ infected and intervention $u$ over an indefinite amount of time (see Figure). 
 
 ![Fundamental limits on taming epidemics](Diagram.png)
+
 *Establishing strategy design principles for epidemics is a complex task. In our paper we make use of the above schema in order to address this issue for arbitrary complex epidemics optimising over interventions for a large class of practically relevant costs.*
 
 We model the epidemics as stochastic jump models that accurately describe the evolution of the epidemics in that only rates can be controlled rather than individual events. We consider a wide class of cost functions that depend arbitrarily on interventions and scale with infections and we demonstrate that increasing infections are not associated with increasingly restrictive measures. The optimal policies are also constant with respect to prevalence implying no incentive to adjust the optimally chosen transmission rate to respond to the rapidly changing infection prevalence. After exhaustive computations we find that our results hold for arbitrary complex stochastic compartmental models and for a very broad class of epidemic and cost parameters. We identify these generic features of the optimal policies via provably exact analytical and computational tools.
 
-This repository contains the scripts and data files used to generate the results presented in the paper *Fundamental limits for taming infectious disease* and its supplementary materials. Below is an overview of the directory structure and a list of computer source, and data processing scripts.
+An overview ot the code base is provided below.
 
 ## Directory Structure
 
@@ -87,7 +88,6 @@ The code base is written in ```C++``` and ```Matlab```. Specifically:
 foo@bar:~$ g++ -o filetorun.o hello.cpp
 foo@bar:~$ ./filetorun.o
 ```
-
 *N.B.* The computation time can be long in certain parameter configuration and for large parameter grids. The default parameters are set so to obtain a solutions in a relatively short amount of time on modern computer. In order however to obtain the the optimal policies for large populations and a large parameter ranges it is advised to:
   - Run the code in High Performance Computing environment
   - Makes use of the `openmp` `g++` compiler directive 
