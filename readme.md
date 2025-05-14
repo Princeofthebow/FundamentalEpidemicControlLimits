@@ -89,8 +89,8 @@ foo@bar:~$ g++ -o filetorun.o hello.cpp
 foo@bar:~$ ./filetorun.o
 ```
 *N.B.* The computation time can be long in certain parameter configuration and for large parameter grids. The default parameters are set so to obtain a solutions in a relatively short amount of time on modern computer. In order however to obtain the the optimal policies for large populations and a large parameter ranges it is advised to:
-  - Run the code in High Performance Computing environment
-  - Makes use of the `openmp` `g++` compiler directive 
+    - Run the code in High Performance Computing environment
+    - Makes use of the `openmp` `g++` compiler directive 
  
 
 - The ```Matlab``` code does not require any specific toolbox. Once the specific file has been opened in the `Matlab` environment editor and the parameter have been chosen it is sufficient to press the `"Play"` button or `F5`.
