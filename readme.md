@@ -4,7 +4,7 @@
 ## Table of Contents
 - [Project description](#introduction)
 - [Directory structure](#directory-structure)
-- [Getting started](#Getting-started)
+- [Instructions](#Instructions)
 ## Project description
 
 **Contributors**
@@ -13,8 +13,7 @@ This research was conceived and led by Giovanni Pugliese Carratelli and Ioannis 
 
 **Summary**
 
-This repository provides the code, some examples and data files used to generate the results presented in the paper r *Fundamental limits for taming infectious disease* which investigates how during an epidemic prevalence signals can be ineffective to tame the spread of a disease. Below is an overview of article and the directory structure and a list of computer code sources is provided in the [directory structure section](#directory-structure).
-
+This repository provides the code, some examples and data files used to generate the results presented in the paper *Fundamental limits on taming infectious disease epidemics* that investigates how during an epidemic prevalence signals can be ineffective to tame the spread of a disease. Below is an overview of the article, the directory structure and a list of computer code sources is provided in the [directory structure section](#directory-structure).
 
 We consider the problem of finding transmission mitigation measures $u^\ast$ that minimise the social/economic costs $g_c(i,u)$ due to $i$ infected and intervention $u$ over an indefinite amount of time (see Figure). 
 
@@ -29,8 +28,7 @@ An overview ot the code base is provided below.
 ## Directory Structure
 
 There are two main folders, `code/` and `plots/`. `code` contains all the scripts used to generate the data files. These include ```C++``` code as well as ```Matlab``` code. `script_plots` contains several data processing files and will contain the code and material that is needed to reconstruct the figures of the paper and the supplementary material.
-The requirements for the codebase are provided in each of the folders. But a quick start guid is outlined in the [Getting started section](#Getting-started)
-
+The requirements for the codebase are provided in each of the folders. But general instructions to run the code are in the [Instructions section](#Instructions)
 
 ---
 
@@ -76,10 +74,10 @@ The content of `code/` and as well as a short description of the content is prov
 </details>
 ---
 
-The folder `script_plots/` contains data processing files  and after the review process is finalised will contain sub-folders that are named after figures in the paper. The sub-folders will include the relevant figure, the data and the code that was used to generate the figure.
+The folder `script_plots/` contains data processing files. After the review process is finalised the folder will contain sub-folders that are named after figures in the paper. The sub-folders will include the relevant figure, the data and the code that was used to generate the figure.
 
-## Getting started
-The specific instructions to run a computation are provided in each folder. Here we provide a quick start guide to run some low scale computations. 
+## Instructions
+The specific instructions to run a computation are provided in each folder. Here we provide a general instruction and the requirements to run some low scale computations. 
 
 The code base is written in ```C++``` and ```Matlab```. Specifically:
 
@@ -97,4 +95,4 @@ The code base is written in ```C++``` and ```Matlab```. Specifically:
 
  
 
-- The ```Matlab``` only requires the parallel computation toolbox for the time simulations. Once the considered file has been opened in the `Matlab` environment editor and the parameter have been chosen it is sufficient to press the `"Run"` button or `F5`.
+- The ```Matlab``` code only requires the parallel computation toolbox for the time simulations. Once the considered file has been opened in the `Matlab` environment editor and the parameter have been chosen it is sufficient to press the `"Run"` button or `F5`.
