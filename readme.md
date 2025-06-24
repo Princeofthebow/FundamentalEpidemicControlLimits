@@ -1,4 +1,4 @@
-# Documentation for the code related to the paper *Fundamental limits for taming infectious disease*
+# Documentation for the code related to the paper *Fundamental limits on taming infectious disease epidemics*
 
 
 ## Table of Contents
