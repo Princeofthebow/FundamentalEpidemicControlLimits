@@ -48,7 +48,7 @@ The content of `code/` and as well as a short description of the content is prov
 
 - **`SI_Bursts_PolicyComputation.cpp`**: `C++` file that will compute the optimal policy for the SI model when considering infection bursts (i.e. when an infection event can lead to a random number of infected individuals) for a specific range of parameters of interest
 
-- **`SI_Gillespie.m`**: `Matlab` script implementing the Stochastic Simulation Algorithm in order to obtain the trajectories of an SI epidemic. The function runs multiple times in parallel for specific set of parameters and can be adapted to incorporate parameter variations.
+- **`SI_Gillespie.m`**: `Matlab` script implementing the Stochastic Simulation Algorithm in order to obtain the trajectories for an SI epidemic. The function runs multiple times in parallel for specific set of parameters.
 </details>
 
 <details>
@@ -60,7 +60,7 @@ The content of `code/` and as well as a short description of the content is prov
 
 - **`SIR_BurstPolicyComputation.m`**: `Matlab` script that will compute the optimal policy for the SIR model for a specific parameter configuration i the presence of bursts, i.e. when an infection event can lead to a random number of infected individuals. 
 
-- **`SIR_Gillespie.m`**: `Matlab` script implementing the Stochastic Simulation Algorithm in order to obtain the trajectories of an SIR epidemic. The function runs multiple times in parallel for specific set of parameters and can be adapted to incorporate parameter variations.
+- **`SIR_Gillespie.m`**: `Matlab` script implementing the Stochastic Simulation Algorithm in order to obtain the trajectories of an SIR epidemic. The function runs multiple times in parallel for specific set of parameters.
 
 </details>
 
@@ -81,18 +81,19 @@ The specific instructions to run a computation are provided in each folder. Here
 
 The code base is written in ```C++``` and ```Matlab```. Specifically:
 
-- The ```C++``` code has been written and tested using the `g++` compiler in a Linux environment. In order to run a computation, the user must specify the parameters in the considered `.cpp` file and save the file with a text editor (as discussed below, default parameters ensure reasonable computation times). The considered file then has to be compiled and run using the following commands:
+- The ```C++``` code has been written and tested using the `g++` compiler in a Linux environment. In order to run a computation, the user must specify the parameters in the considered `.cpp` file and save the file with a text editor (default parameters ensure reasonable computation times). The considered file then has to be compiled and run using the following commands:
 
     ```console
     foo@bar:~$ g++ -o filetorun.o hello.cpp
     foo@bar:~$ ./filetorun.o
     ```
 
-    *N.B.* The computation time can be long in certain parameter configurations and for large parameter grids. The default parameters are set to obtain a solution in a relatively short amount of time on a modern computer. However, in order to obtain the optimal policies for large populations and a wide range of parameters, it is advised to:
+    *N.B.* The computation time can be long for certain parameter configurations and for large parameter grids. The default parameters are set to obtain a solution in a relatively short amount of time on a modern computer. In order to obtain the optimal policies for large populations and a wide range of parameters, it is advised to:
 
     - Run the code in a High Performance Computing environment (HPC)  
-    - Make use of the `openmp` `g++` compiler parameter for parallel computation
+    - Make use of the `openmp` `g++` parameter for parallel computation `-fopenmp` 
+    - Make use of the `-O3` option for complier optimisation
 
  
 
-- The ```Matlab``` code only requires the parallel computation toolbox for the time simulations. Once the considered file has been opened in the `Matlab` environment editor and the parameter have been chosen it is sufficient to press the `"Run"` button or `F5`.
+- The ```Matlab``` code requires the parallel computation toolbox for the time simulations. Once the considered file has been opened in the `Matlab` environment editor and the parameter have been chosen it is sufficient to press the `"Run"` button or `F5`.

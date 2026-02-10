@@ -73,8 +73,8 @@ xlabel('i (infected)')
 ylabel('J(i)')
 title('Value Function for the SI model')
 
-figure();
-stairs(1:N_i-1, u(minpos(2:end-1)))
-xlabel('i (infected)')
-ylabel('u^*(i)')
-title('Optimal control for the SI model')
+% figure();
+% stairs(1:N_i-1, u(minpos(2:end-1)))
+% xlabel('i (infected)')
+% ylabel('u^*(i)')
+% title('Optimal control for the SI model')

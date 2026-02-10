@@ -1,16 +1,9 @@
-clear all
-clc
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% The code in this file computes the optimal policies using value iteration 
-% for the Susceptible-Infected-Recovered model via the value iteration algoritihm for 
-% the considered costs
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function  Fig1SIR(N_i,c2,R0)
 
-N_i = 15;% Number of possible infective
 N = N_i+1; % number of nodes in markov chain
 eps = 1e-6;% Threshold for convergence of the Value iteration algorithm
 
-nu = 1e2;% uniformisation factor denoted as nu in the paper
+nu = 1e3;% uniformisation factor denoted as nu in the paper
 % The uniformisation factor is here selected empirically to be greater than
 % the sum of the rates exiting a node. The article quantifies this
 % precisely but we use empirical values in the code that have to be adapted
@@ -18,7 +11,7 @@ nu = 1e2;% uniformisation factor denoted as nu in the paper
 
 % System constants
 gamma = 0.32;
-R0= 3.5;
+%R0 is defined outside R0= 3.5;
 mu = R0*gamma/N_i;
 ub = linspace(0,0.8,2);
 
@@ -27,7 +20,7 @@ ub = linspace(0,0.8,2);
 % The computation consider z(u) = u and simple adaptations are
 % required to consider other z(u)
 c1 = 0;
-c2 = 10;
+% c2 is defined outside the function c2 = 1;
 c3 = 1;
 c4 = 0;
 % In this computation we consider h(u) = 1-u but with minor edits other
@@ -72,13 +65,6 @@ end
 etime = toc;
 disp(['The computation took '  num2str(etime)  ' seconds'])
 
-figure();
-surf(0:N_i,0:N_i,J)
-xlabel('i (infected)')
-ylabel('s (susceptible)')
-zlabel('J(s,i)')
-title('Value Function for the SIR model')
-
 
 policy = minpos;
 policy(find(~isnan(policy))) = ub((minpos(find(~isnan(policy)))));
@@ -88,4 +74,5 @@ surf(0:N_i,0:N_i,policy)
 xlabel('i (infected)')
 ylabel('s (susceptible)')
 zlabel('u^*(s,i)')
-title('Optimal policy for the SIR model')
+title(['Optimal policy for the SIR model for zeta ' num2str(c2/c3) ' and R0 ' num2str(R0)] )
+end
