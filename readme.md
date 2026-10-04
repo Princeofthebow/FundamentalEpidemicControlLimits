@@ -72,9 +72,6 @@ The content of `code/` and as well as a short description of the content is prov
 - **`SEIR_PolicyComputation.m`**: `Matlab` function that will compute the optimal policy for the SEIR model for a specific parameter configuration. 
 
 </details>
----
-
-The folder `script_plots/` contains data processing files. After the review process is finalised the folder will contain sub-folders that are named after figures in the paper. The sub-folders will include the relevant figure, the data and the code that was used to generate the figure.
 
 ## Instructions
 The specific instructions to run a computation are provided in each folder. Here we provide a general instruction and the requirements to run some low scale computations. 
