@@ -14,7 +14,7 @@ In order to compile the code the following commands has to be executed in a term
     foo@bar:~$ ./filetorun.o
     ```
 
-*N.B.* The computation time can be long in certain parameter configurations and for large parameter grids. The default parameters are set to obtain a solution in a relatively short amount of time on a modern computer. However, in order to obtain the optimal policies for large populations and a wide range of parameters, it is advised to:
+*N.B.* The computation time is long for certain parameter configurations and for large parameter grids. The default parameters are set to obtain a solution in a relatively short amount of time on a modern computer. However, in order to obtain the optimal policies for large populations and a wide range of parameters, it is advised to:
 
 
 Once the computation has finished each of the file will output the results to several txt files which can processed with the `Matlab` scripts available in the appropriate folder in `scripts_plots`.
