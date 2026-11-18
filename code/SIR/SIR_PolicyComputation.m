@@ -6,11 +6,11 @@ clc
 % the considered costs
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-N_i = 15;% Number of possible infective
+N_i = 350;% Number of possible infective
 N = N_i+1; % number of nodes in markov chain
 eps = 1e-6;% Threshold for convergence of the Value iteration algorithm
 
-nu = 1e2;% uniformisation factor denoted as nu in the paper
+nu = 1e3;% uniformisation factor denoted as nu in the paper
 % The uniformisation factor is here selected empirically to be greater than
 % the sum of the rates exiting a node. The article quantifies this
 % precisely but we use empirical values in the code that have to be adapted
@@ -20,7 +20,7 @@ nu = 1e2;% uniformisation factor denoted as nu in the paper
 gamma = 0.32;
 R0= 3.5;
 mu = R0*gamma/N_i;
-ub = linspace(0,0.8,2);
+ub = linspace(0,0.8,10);
 
 % Definition of cost parameters as in the paper.
 % The costs function we consider is c1+c2iz(u)+c3i+c4Nu
@@ -54,7 +54,7 @@ while true
                         J(sdx,idx) = (1./nu).*( gamma*i.*J(sdx,idx-1) + (nu-gamma*i).*J(sdx,idx) + minval);  % as function?
 
                     otherwise
-                        [minval,minpos(sdx,idx)] = min( c1+c2.*i.*ub+c3.*i+c4.*ub.*N+ mu.*(1-ub).*s.*i.*( J(sdx-1,idx+1)-J(sdx,idx) ) );
+                        [minval,minpos(sdx,idx)] = min( c1+c2.*i.*ub+c3.*i+c4.*ub.*N+ mu.*(1-ub).^2.*s.*i.*( J(sdx-1,idx+1)-J(sdx,idx) ) );
                         J(sdx,idx) = (1./nu).*( gamma*i.*J(sdx,idx-1) + (nu-gamma*i).*J(sdx,idx) + minval);  % as function?
             end            
             delta = max(delta,abs(Vnew-J(sdx,idx)));  
@@ -89,3 +89,13 @@ xlabel('i (infected)')
 ylabel('s (susceptible)')
 zlabel('u^*(s,i)')
 title('Optimal policy for the SIR model')
+
+controlledR = R0*(1-policy(2:end,2:end)).^2;
+
+
+figure();
+surf(100*(1:N_i)./N_i,100*(1:N_i)./N_i,controlledR)
+xlabel('i (infected)')
+ylabel('s (susceptible)')
+zlabel('u^*(s,i)')
+title('Optimal transmission rate for the SIR model')

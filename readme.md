@@ -17,7 +17,7 @@ This repository provides the code, some examples and data files used to generate
 
 We consider the problem of finding transmission mitigation measures $u^\ast$ that minimise the social/economic costs $g_c(i,u)$ due to $i$ infected and intervention $u$ over an indefinite amount of time (see Figure). 
 
-![Fundamental limits on taming epidemics](Diagram.png)
+![Fundamental limits on taming epidemics](Diagram.svg)
 
 *Establishing strategy design principles for epidemics is a complex task. In our paper we make use of the above schema in order to address this issue for arbitrary complex epidemics optimising over interventions for a large class of practically relevant costs.*
 
